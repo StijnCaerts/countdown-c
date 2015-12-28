@@ -118,7 +118,7 @@ int main() {
 
         int row,col;
 	initscr();
-        getmaxyx(stdscr,row,col);                       /* get the number of rows and columns */
+        getmaxyx(stdscr,row,col);	/* get the number of rows and columns */
         // mvprintw(row-2,0,"This screen has %d rows and %d columns\n",row,col);
         // printw("Try resizing your window(if possible) and then run this program again");
         refresh();
@@ -141,12 +141,11 @@ int main() {
 	newYear.tm_min = 0;
 	newYear.tm_hour = 0;
 	newYear.tm_mday = 1;
-	newYear.tm_mon = 1;
+	newYear.tm_mon = 1 - 1;
 	newYear.tm_year += 1;
 
 	diff = (int) difftime(mktime(&newYear), systemTime);
 
-	char mesg2[] = "Hello from the other side.";
 	while(diff > 0) {
 		// printf("%f\n", diff);
 		days = diff / (60*60*24);
@@ -172,14 +171,14 @@ int main() {
 				strcat(output[i], numbers[11][i]);
 			}
 
-			if (ho > 0) {
+			if (ho > 0 || days > 0) {
 				strcat(output[i], numbers[ho/10][i]);
 				strcat(output[i], numbers[ho%10][i]);
 				// : divider
 				strcat(output[i], numbers[10][i]);
 			}
 
-			if (min > 0 || ho > 0) {
+			if (min > 0 || ho > 0 || days > 0) {
 				strcat(output[i], numbers[min/10][i]);
 				strcat(output[i], numbers[min%10][i]);
 				// : divider
@@ -207,6 +206,9 @@ int main() {
         	mvprintw(row/2-3+i,(col-strlen(hny[i]))/2,"%s",output[i]);
 	}
 	attroff(COLOR_PAIR(2));
+
+	getch();
+	endwin();
 
 	return 0;
 }
