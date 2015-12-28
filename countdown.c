@@ -121,13 +121,14 @@ int main() {
         getmaxyx(stdscr,row,col);	/* get the number of rows and columns */
         // mvprintw(row-2,0,"This screen has %d rows and %d columns\n",row,col);
         // printw("Try resizing your window(if possible) and then run this program again");
-        refresh();
+        // refresh();
+	curs_set(0);
 
 	start_color();
 	init_pair(1, COLOR_YELLOW, COLOR_BLACK);
 	init_pair(2, COLOR_CYAN, COLOR_BLACK);
 
-	attron(COLOR_PAIR(1));
+	attron(COLOR_PAIR(1) | A_BOLD);
 
 	int diff;
 	int sec, min, ho, days;
@@ -193,7 +194,7 @@ int main() {
 
 			mvprintw(row/2-3+i,(col-strlen(output[i]))/2,"%s",output[i]);
 		}
-
+		move(row-1, col-1);
 		refresh();
 		diff--;
 		sleep(1);
@@ -205,7 +206,7 @@ int main() {
 	for (int i = 0; i < 8; i++) {
         	mvprintw(row/2-3+i,(col-strlen(hny[i]))/2,"%s",output[i]);
 	}
-	attroff(COLOR_PAIR(2));
+	attroff(COLOR_PAIR(2) | A_BOLD);
 
 	getch();
 	endwin();
