@@ -2,7 +2,8 @@
 This project is a small countdown-timer to New Year, coded in C using the ncurses library.
 
 ## Features
-- countdown to New Year in the format DDD HH:MM:SS
+- automatically selects the next year transition, based on the system time
+- countdown in the format DDD HH:MM:SS
 - format changes as the time ticks away, eg. HH:MM:SS to MM:SS to SS to S
 - runs in the terminal
 - coded in C
