@@ -154,6 +154,7 @@ int main() {
 	        min = (diff / 60) % 60;
 		sec = diff % 60;
 
+		erase();
 		for (int i = 0; i < 7; i++) {
 			strcpy(output[i], "");
 
@@ -200,9 +201,9 @@ int main() {
 		sleep(1);
 	}
 
-	attroff(COLOR_PAIR(1));
+	attroff(COLOR_PAIR(1) | A_BOLD);
 
-	attron(COLOR_PAIR(2));
+	attron(COLOR_PAIR(2) | A_BOLD);
 	for (int i = 0; i < 8; i++) {
 		mvprintw(row/2-3+i,(col-strlen(hny[i]))/2,"%s",hny[i]);
 	}
