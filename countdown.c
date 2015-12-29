@@ -204,7 +204,7 @@ int main() {
 
 	attron(COLOR_PAIR(2));
 	for (int i = 0; i < 8; i++) {
-        	mvprintw(row/2-3+i,(col-strlen(hny[i]))/2,"%s",output[i]);
+		mvprintw(row/2-3+i,(col-strlen(hny[i]))/2,"%s",hny[i]);
 	}
 	attroff(COLOR_PAIR(2) | A_BOLD);
 
