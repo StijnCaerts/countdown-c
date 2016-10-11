@@ -16,3 +16,6 @@ This project is a small countdown-timer to New Year, coded in C using the ncurse
 	`make` or `gcc -o countdown countdown.c -lncurses -std=c99`
 2. run the compiled executable:
 	`./countdown`
+	
+## License
+MIT
