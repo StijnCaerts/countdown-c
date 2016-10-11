@@ -6,7 +6,7 @@ This project is a small countdown-timer to New Year, coded in C using the ncurse
 - countdown in the format DDD HH:MM:SS
 - format changes as the time ticks away, eg. HH:MM:SS to MM:SS to SS to S
 - runs in the terminal
-- timer in ASCI-art
+- timer in ASCII-art
 - coded in C
 - uses the ncurses library
 - makefile included
@@ -18,4 +18,4 @@ This project is a small countdown-timer to New Year, coded in C using the ncurse
 	`./countdown`
 	
 ## License
-MIT
+See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
